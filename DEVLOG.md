@@ -71,6 +71,8 @@ Gotta check out for finals again. Hopefully I’ll finish.
 12/20 
 I've done the best I can with the little info I know about Angular, I don't want to do a rush job and find code to add to this i'd rather learn and understand as I go like i've been doing so it's best that I end here. Unfinished but I can see that front-end, with Angular at least, isn't my thing. Working with Node and Express and Mongo for the API was more up my alley. 
 
+**wasn't able to add tasks specifically to categories**
+
 **If i could do things differently, it would have been better for me to ignore the design initially and work on getting the use cases done, because the design with dialogs kind of tied my hands in areas where passing data to components was necessary.**
 
 **All together, great experience, learned a alot**

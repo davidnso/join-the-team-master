@@ -19,7 +19,7 @@ app.get('/', function (req,res){
 res.send('Hello There')
 console.log('Server started on 3000...');
 })
-app.get('/Categories', function(req,res){
+app.get('/api/Categories', function(req,res){
  	Categories.getCategories(function(err, Categories){
  		if(err){
  			throw err; 
@@ -29,7 +29,7 @@ app.get('/Categories', function(req,res){
  	});
  	
 });
-app.get('/Categories/name', function(req,res){
+app.get('/api/Categories/name', function(req,res){
 	var name = req.params.name;
 	Categories.getTaskById( name ,function(err, Categories){
 		if(err){
@@ -38,7 +38,7 @@ app.get('/Categories/name', function(req,res){
 		res.json(Categories)
 	})
 })
-app.get('/Tasks', function(req,res){
+app.get('/api/Tasks', function(req,res){
  	Tasks.getTasks(function(err, Tasks){
  		if(err){
  			throw err; 
@@ -48,7 +48,7 @@ app.get('/Tasks', function(req,res){
  	});
  	
 });
-app.post('/Tasks', function(req,res){
+app.post('/api/Tasks', function(req,res){
 	var Task = req.body
  	Tasks.addTask(Task, function(err, Task){
  		if(err){
@@ -59,7 +59,7 @@ app.post('/Tasks', function(req,res){
  	});
  	
 });
-app.post('/Categories', function(req,res){
+app.post('/api/Categories', function(req,res){
 	var categories = req.body
  	Categories.createCategory(categories, function(err, categories){
  		if(err){
@@ -70,7 +70,7 @@ app.post('/Categories', function(req,res){
  	});
  	
 });
-app.put('/Categories/:_id', function(req,res, client){
+app.put('/api/Categories/:_id', function(req,res, client){
 	var id = req.params._id;
 	var categories = req.body;
  	Categories.updateCategory(id, categories,{}, function(err, categories){
@@ -82,7 +82,7 @@ app.put('/Categories/:_id', function(req,res, client){
  	});
  	
 });
-app.put('/Tasks/:_id', function(req,res,client){
+app.put('/api/Tasks/:_id', function(req,res,client){
 	var id = req.params._id;
 	var Task = req.body;
 	//client.db('task-service').collection('tasks').update({})
@@ -96,7 +96,7 @@ app.put('/Tasks/:_id', function(req,res,client){
  	});
  	
 });
-app.delete('/tasks/:_id',function(req,res){
+app.delete('/api/tasks/:_id',function(req,res){
 	var id = req.params._id;
 	Tasks.deleteTask(id, function(err, Tasks){
 		if(err){
@@ -107,7 +107,7 @@ app.delete('/tasks/:_id',function(req,res){
 	})
 
 })
-app.delete('/categories/:_id', function(req, res){
+app.delete('/api/categories/:_id', function(req, res){
 	var id = req.params._id;
 	Categories.deleteCategory(id,function(err, Categories){
 		if(err){
